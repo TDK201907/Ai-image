@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Ảnh Web App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>AI Xử Lý Ảnh - Đầy Đủ</h1>
+    <input type="file" id="imageUpload" accept="image/*"><br><br>
+    <div class="buttons">
+        <button onclick="removeBackground()">Xoá nền</button>
+        <button onclick="blurBackground()">Làm mờ nền</button>
+        <button onclick="removeWatermark()">Xoá watermark</button>
+        <button onclick="cropImage()">Crop ảnh</button>
+        <button onclick="aiEnhance()">AI Enhance</button>
+        <label>Độ sáng: <input type="range" min="50" max="150" value="100" onchange="adjustBrightness(this.value)"></label>
+        <button onclick="downloadImage()">Tải ảnh</button>
+    </div>
+    <canvas id="canvas"></canvas>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/body-pix"></script>
+    <script src="script.js"></script>
+</body>
+</html>
